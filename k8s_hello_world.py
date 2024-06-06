@@ -7,13 +7,19 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return f"<p>Version1.0.3: Api was run on {socket.gethostname()}! </p>"
+    return f"<p>Version1.0.4: Api was run on {socket.gethostname()}! </p>"
 
 
 @app.route("/nginx")
 def nginx_start_page():
     url = 'http://nginx:8080'
     return requests.get(url).text
+
+
+@app.route("/jsonplaceholder/posts")
+def jsonplaceholder_posts():
+    url = 'https://jsonplaceholder.typicode.com/posts'
+    return requests.get(url).json()
 
 
 if __name__ == '__main__':
