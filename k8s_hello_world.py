@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return f"<p>Version1.0.4: Api was run on {socket.gethostname()}! </p>"
+    return f"<p>Version1.1.0: Api was run on {socket.gethostname()}! </p>"
 
 
 @app.route("/nginx")
